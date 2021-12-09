@@ -21,32 +21,31 @@ AWS.config.update({
   region: REGION
 });
 
+
+
 var translate = new AWS.Translate();
 router.get('/', (req, res) => {
-  res.status(200).send({message: "Luu Tan Phat!"});
-  
+  // res.status(200).send({message: "Luu Tan Phat!"});
+  res.render('new')
 })
 
 router.post('/translate', function(req, res, next) {
-  // var params = {
-  //   SourceLanguageCode: req.body.SourceLanguageCode, /* required */
-  //   TargetLanguageCode: req.body.TargetLanguageCode, /* required */
-  //   Text: req.body.Text, /* required */
-  // }
-
   var params = {
-    SourceLanguageCode:'en', /* required */
-    TargetLanguageCode: 'vi', /* required */
-    Text: 'funny ', /* required */
+    SourceLanguageCode: req.body.SourceLanguageCode, /* required */
+    TargetLanguageCode: req.body.TargetLanguageCode, /* required */
+    Text: req.body.Text, /* required */
   }
+
+ 
   translate.translateText(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else     {
       // console.log(data);
       res.status(200).send(data);
+      console.log(data)
     } 
   });
-  console.log("hello")
+  
 });
 
 module.exports = router;
