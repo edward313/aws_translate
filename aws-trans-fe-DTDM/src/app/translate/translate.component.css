@@ -1,6 +1,6 @@
    /*Contact sectiom*/
    .content-header{
-    font-family: 'Oleo Script', cursive;
+    font-family: sans-serif;
     color:#fcc500;
     font-size: 45px;
   }
@@ -14,7 +14,7 @@
   }
   #contact{
       
-      font-family: 'Teko', sans-serif;
+    font-family: 'Times New Roman', Times, serif;
     padding-top: 60px;
     width: 100%;
     width: 100vw;

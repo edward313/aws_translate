@@ -28,12 +28,19 @@
                 <option value="cz">czech</option>
                 <option value="sk">slovakia</option>
               </select> 
-</div>
+			</div>
+			
 			  			<div class="form-group">
 			  				
-			  			 	<textarea  class="form-control" id="original" placeholder="Enter Your Text"></textarea>
+			  			 	<textarea  class="form-control" id='Text' #box (keyup)="getValue(box.value)" placeholder="Enter Your Text"></textarea>
+							   
 			  			</div>
+						<script>
+							
+						</script>
 			  		</div>
+
+			
 			  		<div class="col-md-6">
 			  		     <div class="form-group"> 
 					    <label for ="from"> From</label>
@@ -45,11 +52,12 @@
               </select> </div>
 			  			<div class="form-group">
 			  			
-			  			 	<textarea  class="form-control" id="translated" placeholder="Translated text will be here"></textarea>
+
+			  			 	<textarea  class="form-control" id="translated" placeholder="Translated text will be here">{{translateText}}</textarea>
 			  			</div>
 			  			<div>
 
-			  				<button type="button" class="btn btn-default submit"><i class="fa fa-globe" aria-hidden="true"></i>   translate</button>
+			  				<button type="button" (click)="Translate()" class="btn btn-default submit"><i class="fa fa-globe" aria-hidden="true"></i>   translate</button>
 			  			</div>
 			  			
 					</div>
