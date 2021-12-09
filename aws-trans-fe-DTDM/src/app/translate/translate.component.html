@@ -10,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
    	<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
    	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-  
+<!-- 	   
+
+
 <section id="contact">
+
 			<div class="section-content">
 				<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Translate</span> your text</h1>
 				<h3>Write and click <b>TRANSLATE</b></h3>
@@ -23,11 +26,15 @@
 					    <div class="form-group"> 
 					    <label for ="from"> From</label>
 			  				
-					    <select name="from">
-                <option value="en">english</option>
-                <option value="cz">czech</option>
-                <option value="sk">slovakia</option>
-              </select> 
+					   
+                
+
+				<select>
+					<option value="en">english</option>
+               		 <option value="cz">czech</option>
+               		 <option value="sk">slovakia</option>
+				  </select>
+              
 			</div>
 			
 			  			<div class="form-group">
@@ -38,18 +45,20 @@
 						<script>
 							
 						</script>
+						
 			  		</div>
-
+					 
 			
 			  		<div class="col-md-6">
 			  		     <div class="form-group"> 
 					    <label for ="from"> From</label>
 			  				
-					    <select name="from">
-              <option value="en">english</option>
-              <option value="vi">vietnam</option>
-              <option value="sk">slovakia</option>
-              </select> </div>
+					    <select class="form-select"  name="from">
+						<option value="en">english</option>
+						<option value="vi">vietnam</option>
+						<option value="sk">slovakia</option>
+						</select>
+					 </div>
 			  			<div class="form-group">
 			  			
 
@@ -63,4 +72,30 @@
 					</div>
 				</form>
 				</div></div>
-		</section>
+</section> -->
+
+
+<div class="textboxs">
+	<div class="textbox">
+		<div class="custom-select" style="width:200px;">
+			<select>
+				<option value="en">english</option>
+				<option value="vi">vietnam</option>
+				<option value="sk">slovakia</option>
+			</select>
+		  </div>
+		  <textarea  class="form-control" id='Text'rows="10" #box (keyup.enter)="Translate(box.value)" placeholder="Enter Your Text"></textarea>
+	</div>
+	<div class="textbox">
+		<div class="custom-select" style="width:200px;">
+			<select>
+				<option value="en">english</option>
+				<option value="vi">vietnam</option>
+				<option value="sk">slovakia</option>
+			</select>
+		  </div>
+		  <textarea  class="form-control" id='Text'rows="10" #box (keyup)="getValue(box.value)" placeholder="Enter Your Text" readonly>{{translateText}}</textarea>
+	</div>
+	
+</div>
+<!-- <button type="button" (click)="Translate()" class="btn btn-default submit"><i class="fa fa-globe" aria-hidden="true"></i>   translate</button> -->

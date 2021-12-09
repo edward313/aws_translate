@@ -24,8 +24,8 @@ export class TranslateComponent implements OnInit {
     console.warn(this.text)
   }
   
-  Translate(){
-   
+  Translate(val:string){
+    this.text=val
 
     const payload ={
       SourceLanguageCode:'en', /* required */
