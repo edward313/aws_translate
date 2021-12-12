@@ -36,7 +36,7 @@ router.post('/translate', function(req, res, next) {
     Text: req.body.Text, /* required */
   }
 
- 
+  console.log(params)
   translate.translateText(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else     {

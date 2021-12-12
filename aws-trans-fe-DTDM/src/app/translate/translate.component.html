@@ -10,92 +10,38 @@
     <link href="https://fonts.googleapis.com/css?family=Oleo+Script:400,700" rel="stylesheet">
    	<link href="https://fonts.googleapis.com/css?family=Teko:400,700" rel="stylesheet">
    	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
-<!-- 	   
 
 
-<section id="contact">
-
-			<div class="section-content">
-				<h1 class="section-header"> <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Translate</span> your text</h1>
-				<h3>Write and click <b>TRANSLATE</b></h3>
-			</div>
-			<div class="contact-section">
-			<div class="container">
-				<form>	
-					<div class="col-md-6 form-line">
-					    <div class="form-group"> 
-					    <label for ="from"> From</label>
-			  				
-					   
-                
-
-				<select>
-					<option value="en">english</option>
-               		 <option value="cz">czech</option>
-               		 <option value="sk">slovakia</option>
-				  </select>
-              
-			</div>
-			
-			  			<div class="form-group">
-			  				
-			  			 	<textarea  class="form-control" id='Text' #box (keyup)="getValue(box.value)" placeholder="Enter Your Text"></textarea>
-							   
-			  			</div>
-						<script>
-							
-						</script>
-						
-			  		</div>
-					 
-			
-			  		<div class="col-md-6">
-			  		     <div class="form-group"> 
-					    <label for ="from"> From</label>
-			  				
-					    <select class="form-select"  name="from">
-						<option value="en">english</option>
-						<option value="vi">vietnam</option>
-						<option value="sk">slovakia</option>
-						</select>
-					 </div>
-			  			<div class="form-group">
-			  			
-
-			  			 	<textarea  class="form-control" id="translated" placeholder="Translated text will be here">{{translateText}}</textarea>
-			  			</div>
-			  			<div>
-
-			  				<button type="button" (click)="Translate()" class="btn btn-default submit"><i class="fa fa-globe" aria-hidden="true"></i>   translate</button>
-			  			</div>
-			  			
-					</div>
-				</form>
-				</div></div>
-</section> -->
-
-
+<div class="headder">
+	
+		Ứng dụng dịch văn bằng Amazon Translate
+	
+</div>
 <div class="textboxs">
 	<div class="textbox">
 		<div class="custom-select" style="width:200px;">
-			<select>
-				<option value="en">english</option>
+			<div class="bloc">
+			<select [(ngModel)]="SourceTranslate" value='vi' >
+				<!-- <option value="en">english</option>
 				<option value="vi">vietnam</option>
-				<option value="sk">slovakia</option>
+				<option value="sk">slovakia</option> -->
+				<option *ngFor='let NN of language' [value]="NN.value">{{NN.text}}</option>
 			</select>
+			</div>
 		  </div>
-		  <textarea  class="form-control" id='Text'rows="10" #box (keyup.enter)="Translate(box.value)" placeholder="Enter Your Text"></textarea>
+		  <textarea  class="form-control" id='Text' rows="10" #box (keyup.enter)="Translate(box.value)" placeholder="Enter Your Text"></textarea>
 	</div>
 	<div class="textbox">
 		<div class="custom-select" style="width:200px;">
-			<select>
-				<option value="en">english</option>
+			<select [(ngModel)]="Targettranslate"  >
+				<!-- <option value="en">english</option>
 				<option value="vi">vietnam</option>
-				<option value="sk">slovakia</option>
+				<option value="sk">slovakia</option> -->
+				<option *ngFor='let NN of language' [value]="NN.value">{{NN.text}}</option>
 			</select>
 		  </div>
-		  <textarea  class="form-control" id='Text'rows="10" #box (keyup)="getValue(box.value)" placeholder="Enter Your Text" readonly>{{translateText}}</textarea>
+		  <textarea  class="form-control" id='Text'rows="10" #box  placeholder="Enter Your Text" readonly>{{translateText}}</textarea>
 	</div>
 	
 </div>
-<!-- <button type="button" (click)="Translate()" class="btn btn-default submit"><i class="fa fa-globe" aria-hidden="true"></i>   translate</button> -->
+<button class="center" style="text-align: center;margin-left: 18.5%; margin-top: 15px;" (click)=Translate(box.value)>Dịch</button>
