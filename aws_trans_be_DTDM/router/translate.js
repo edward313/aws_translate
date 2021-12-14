@@ -28,9 +28,9 @@ var translate = new AWS.Translate();
 
 
 
-router.get('/', (req, res) => {
+router.get('/translate', (req, res) => {
  
-  res.send("Ket noi backend")
+  res.render('translate')
 });
 
 
@@ -46,6 +46,7 @@ router.post('/translate', function(req, res, next) {
     else     {
       // console.log(data);
       res.status(200).send(data);
+      console.log(req.body)
       
     } 
   });
