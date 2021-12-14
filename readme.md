@@ -9,6 +9,6 @@ Cloud Computing Project using NodeJS and Angular with AWS Translate
    - <b>npm start</b>
 - Open another Terminal:
    - <b>cd aws_trans_fe_DTDM</b>
-   - <b>ng serve</b>/
+   - <b>ng serve</b>
 ### Demo: 
 -Link <b> https://awstranslatenhom11.web.app/</b>
