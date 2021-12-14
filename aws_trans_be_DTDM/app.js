@@ -9,8 +9,8 @@ var cors = require('cors');
 var app = express();
 
 
-// app.set('views', path.join(__dirname, 'view'));
-// app.set('view engine', 'ejs');
+
+app.set('view engine', 'ejs');
 
 
 app.use(express.json());
@@ -30,9 +30,7 @@ app.use('/', indexRouter);
 
 
 // catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
+
 
 // error handler
 app.use(function(err, req, res, next) {
@@ -42,7 +40,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  console.log(err);
+  
   // res.render('error');
 });
 

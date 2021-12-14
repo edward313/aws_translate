@@ -7,8 +7,15 @@ import { HttpClient } from '@angular/common/http';
 export class TranslateService {
 
 constructor(private _http:HttpClient) { }
+Url="https://translateawsnodejs.herokuapp.com/"
+
+// translate(data:any){
+//     return this._http.post<any>('https://translateawsnodejs.herokuapp.com/translate',data );
+// }
+
 
 translate(data:any){
-    return this._http.post<any>('http://localhost:3131/translate',data );
+  return this._http.post<any>('http://localhost:3131/translate',data );
 }
+
 }
