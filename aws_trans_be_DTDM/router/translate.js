@@ -41,12 +41,13 @@ router.post('/translate', function(req, res, next) {
     TargetLanguageCode: req.body.TargetLanguageCode, /* required */
     Text: req.body.Text, /* required */
   }
+  
   translate.translateText(params, function(err, data) {
     if (err) console.log(err, err.stack); // an error occurred
     else     {
       // console.log(data);
       res.status(200).send(data);
-      console.log(req.body)
+      console.log(data)
       
     } 
   });

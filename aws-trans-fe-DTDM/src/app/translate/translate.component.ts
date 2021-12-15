@@ -105,13 +105,16 @@ export class TranslateComponent implements OnInit {
 
 
   Translate(val:string){
+    
     this.text=val
+    console.log(this.text)
     const payload ={
       SourceLanguageCode:this.SourceTranslate, /* required */
       TargetLanguageCode: this.Targettranslate, /* required */
-      Text: this.text, /* required */
+      Text: this.text.slice(0,4900), /* required */
       TranslatedText:''
     }
+    console.log("-----------------")
     
     this.translate.translate(payload).subscribe(data => {
       this.translateText=data.TranslatedText
